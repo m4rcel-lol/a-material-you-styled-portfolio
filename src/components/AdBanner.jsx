@@ -28,7 +28,7 @@ export default function AdBanner() {
           width: '728px',
           height: '90px',
           maxWidth: '100%',
-          borderRadius: 2,
+          borderRadius: 1,
           overflow: 'hidden',
           border: '1px solid rgba(255,255,255,0.08)',
           bgcolor: 'rgba(28, 28, 42, 0.6)',

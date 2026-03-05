@@ -101,7 +101,7 @@ export default function CommitBoard() {
         sx={{
           bgcolor: 'rgba(28, 28, 42, 0.6)',
           backdropFilter: 'blur(12px)',
-          borderRadius: 3,
+          borderRadius: 1,
           border: '1px solid rgba(255,255,255,0.08)',
           p: { xs: 3, md: 4 },
         }}
@@ -143,7 +143,7 @@ export default function CommitBoard() {
                 variant="rectangular"
                 width={12}
                 height={12}
-                sx={{ borderRadius: 0.5, bgcolor: '#2e2e40' }}
+                sx={{ borderRadius: 0.25, bgcolor: '#2e2e40' }}
               />
             ))}
           </Box>
@@ -172,7 +172,7 @@ export default function CommitBoard() {
                       width: 12,
                       height: 12,
                       bgcolor: levelColors[day.level],
-                      borderRadius: 0.5,
+                      borderRadius: 0.25,
                       border: '1px solid rgba(255,255,255,0.05)',
                       cursor: 'pointer',
                       transition: 'all 0.2s ease',
@@ -209,7 +209,7 @@ export default function CommitBoard() {
                     width: 12,
                     height: 12,
                     bgcolor: levelColors[level],
-                    borderRadius: 0.5,
+                    borderRadius: 0.25,
                     border: '1px solid rgba(255,255,255,0.05)',
                   }}
                 />
