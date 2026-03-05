@@ -23,15 +23,15 @@ export default function DisclaimerBanner() {
         aria-live="polite"
         sx={{
           width: '100%',
-          background: 'linear-gradient(90deg, #1e1a2e 0%, #211b38 100%)',
-          borderBottom: '1px solid rgba(203,184,255,0.18)',
+          background: '#211f26',
+          borderBottom: '1px solid #49454f',
           display: 'flex',
           alignItems: 'center',
-          gap: 1.5,
+          gap: 2,
           px: { xs: 2, sm: 4 },
-          py: 1.25,
+          py: 1.5,
           boxSizing: 'border-box',
-          animation: 'slideInDown 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+          animation: 'slideInDown 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
           '@keyframes slideInDown': {
             from: { opacity: 0, transform: 'translateY(-20px)' },
             to: { opacity: 1, transform: 'translateY(0)' },
@@ -41,26 +41,22 @@ export default function DisclaimerBanner() {
         <InfoOutlinedIcon
           fontSize="small"
           sx={{
-            color: '#cbb8ff',
+            color: '#d0bcff',
             flexShrink: 0,
-            animation: 'pulse 2s ease-in-out infinite',
-            '@keyframes pulse': {
-              '0%, 100%': { opacity: 1 },
-              '50%': { opacity: 0.6 },
-            },
           }}
         />
         <Typography
-          variant="labelSmall"
+          variant="labelMedium"
           sx={{
-            color: '#b0aac8',
+            color: '#cac4d0',
             fontFamily: '"Roboto Mono", monospace',
-            letterSpacing: '0.05em',
+            letterSpacing: '0.5px',
             lineHeight: 1.6,
             flex: 1,
+            fontSize: '12px',
           }}
         >
-          <Box component="span" sx={{ color: '#cbb8ff', fontWeight: 600 }}>
+          <Box component="span" sx={{ color: '#d0bcff', fontWeight: 600 }}>
             Disclaimer:{' '}
           </Box>
           This is a personal portfolio website. The domain{' '}
@@ -76,13 +72,14 @@ export default function DisclaimerBanner() {
           onClick={handleDismiss}
           aria-label="Dismiss disclaimer"
           sx={{
-            color: '#4a4a6a',
+            color: '#938f99',
             flexShrink: 0,
-            transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+            minWidth: 40,
+            minHeight: 40,
+            transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
             '&:hover': {
-              color: '#b0aac8',
-              background: 'rgba(203,184,255,0.12)',
-              transform: 'rotate(90deg)',
+              color: '#cac4d0',
+              background: 'rgba(208, 188, 255, 0.12)',
             },
           }}
         >

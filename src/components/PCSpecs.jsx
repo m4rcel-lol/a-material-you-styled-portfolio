@@ -12,7 +12,7 @@ const PC_SPECS = [
     icon: <MemoryIcon />,
     label: 'CPU',
     value: 'Intel Core i7-12700K',
-    color: '#cbb8ff',
+    color: '#d0bcff',
   },
   {
     icon: <DeveloperBoardIcon />,
@@ -24,13 +24,13 @@ const PC_SPECS = [
     icon: <StorageIcon />,
     label: 'RAM',
     value: '32GB DDR4 3600MHz',
-    color: '#86d5e4',
+    color: '#ccc2dc',
   },
   {
     icon: <StorageIcon />,
     label: 'Storage',
     value: '1TB NVMe SSD',
-    color: '#cbb8ff',
+    color: '#d0bcff',
   },
   {
     icon: <MonitorIcon />,
@@ -42,7 +42,7 @@ const PC_SPECS = [
     icon: <KeyboardIcon />,
     label: 'Keyboard',
     value: 'Mechanical 60%',
-    color: '#86d5e4',
+    color: '#ccc2dc',
   },
 ]
 
@@ -51,55 +51,55 @@ export default function PCSpecs() {
     <Box
       component="section"
       sx={{
-        maxWidth: 900,
+        maxWidth: 1000,
         mx: 'auto',
-        px: 2,
-        mb: 6,
-        animation: 'fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) both',
-        animationDelay: '0.4s',
+        px: { xs: 2, sm: 3 },
+        mb: { xs: 4, sm: 6 },
+        animation: 'fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both',
+        animationDelay: '0.3s',
         '@keyframes fadeInUp': {
-          from: { opacity: 0, transform: 'translateY(30px)' },
+          from: { opacity: 0, transform: 'translateY(20px)' },
           to: { opacity: 1, transform: 'translateY(0)' },
         },
       }}
     >
       <Box
         sx={{
-          bgcolor: 'rgba(28, 28, 42, 0.6)',
-          backdropFilter: 'blur(16px)',
+          bgcolor: '#2b2930',
           borderRadius: 3,
-          border: '1px solid rgba(255,255,255,0.08)',
+          border: '1px solid #49454f',
           p: { xs: 3, md: 4 },
-          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
           '&:hover': {
-            bgcolor: 'rgba(28, 28, 42, 0.75)',
-            border: '1px solid rgba(203,184,255,0.15)',
-            boxShadow: '0 8px 32px rgba(203,184,255,0.1)',
+            bgcolor: '#36343b',
+            border: '1px solid #938f99',
+            boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)',
           },
         }}
       >
         {/* Header */}
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 3 }}>
-          <ComputerIcon sx={{ color: '#cbb8ff', fontSize: 24 }} />
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3, flexWrap: 'wrap' }}>
+          <ComputerIcon sx={{ color: '#d0bcff', fontSize: 28 }} />
           <Typography
             variant="titleLarge"
             sx={{
-              color: '#e6e0f0',
-              fontWeight: 600,
+              color: '#e6e1e5',
+              fontWeight: 400,
             }}
           >
             PC Setup
           </Typography>
           <Chip
             label="Template"
-            size="small"
+            size="medium"
             sx={{
               ml: 'auto',
               bgcolor: 'rgba(239, 184, 200, 0.12)',
               color: '#efb8c8',
               border: '1px solid rgba(239, 184, 200, 0.25)',
               fontFamily: '"Roboto Mono", monospace',
-              fontSize: '0.7rem',
+              fontSize: '12px',
+              height: 32,
             }}
           />
         </Box>
@@ -112,17 +112,16 @@ export default function PCSpecs() {
                 sx={{
                   display: 'flex',
                   alignItems: 'flex-start',
-                  gap: 1.5,
-                  p: 2,
-                  bgcolor: 'rgba(255,255,255,0.03)',
+                  gap: 2,
+                  p: 2.5,
+                  bgcolor: '#211f26',
                   borderRadius: 2,
-                  border: '1px solid rgba(255,255,255,0.06)',
-                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  border: '1px solid #49454f',
+                  transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
                   '&:hover': {
-                    bgcolor: 'rgba(255,255,255,0.06)',
-                    border: `1px solid ${spec.color}60`,
-                    transform: 'translateY(-3px)',
-                    boxShadow: `0 8px 24px rgba(0,0,0,0.3), 0 0 0 1px ${spec.color}30`,
+                    bgcolor: '#36343b',
+                    border: `1px solid #938f99`,
+                    boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)',
                   },
                 }}
               >
@@ -131,18 +130,13 @@ export default function PCSpecs() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    width: 36,
-                    height: 36,
-                    borderRadius: 1.5,
-                    bgcolor: `${spec.color}20`,
+                    width: 40,
+                    height: 40,
+                    borderRadius: 2,
+                    bgcolor: 'rgba(208, 188, 255, 0.12)',
                     color: spec.color,
                     flexShrink: 0,
-                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                    '.MuiBox-root:hover > &': {
-                      transform: 'rotate(-5deg) scale(1.1)',
-                      bgcolor: `${spec.color}35`,
-                      boxShadow: `0 0 16px ${spec.color}40`,
-                    },
+                    transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
                   }}
                 >
                   {spec.icon}
@@ -151,12 +145,12 @@ export default function PCSpecs() {
                   <Typography
                     variant="labelMedium"
                     sx={{
-                      color: '#b0aac8',
-                      mb: 0.25,
+                      color: '#cac4d0',
+                      mb: 0.5,
                       fontFamily: '"Roboto Mono", monospace',
                       textTransform: 'uppercase',
-                      letterSpacing: '0.1em',
-                      fontSize: '0.65rem',
+                      letterSpacing: '0.5px',
+                      fontSize: '11px',
                     }}
                   >
                     {spec.label}
@@ -164,9 +158,8 @@ export default function PCSpecs() {
                   <Typography
                     variant="bodyMedium"
                     sx={{
-                      color: '#e6e0f0',
+                      color: '#e6e1e5',
                       fontWeight: 500,
-                      lineHeight: 1.3,
                     }}
                   >
                     {spec.value}
@@ -182,16 +175,16 @@ export default function PCSpecs() {
           sx={{
             mt: 3,
             pt: 3,
-            borderTop: '1px solid rgba(255,255,255,0.06)',
+            borderTop: '1px solid #49454f',
             textAlign: 'center',
           }}
         >
           <Typography
             variant="labelSmall"
             sx={{
-              color: '#b0aac8',
+              color: '#cac4d0',
               fontFamily: '"Roboto Mono", monospace',
-              fontSize: '0.65rem',
+              fontSize: '11px',
             }}
           >
             This is a template • Update specs in PCSpecs.jsx

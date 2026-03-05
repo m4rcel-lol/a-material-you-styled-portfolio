@@ -10,20 +10,18 @@ const LINKS = [
     label: 'GitHub',
     sublabel: 'github.com/m4rcel-lol',
     href: 'https://github.com/m4rcel-lol',
-    color: '#cbb8ff',
-    bg: 'rgba(203, 184, 255, 0.08)',
-    border: 'rgba(203, 184, 255, 0.2)',
-    hoverBg: 'rgba(203, 184, 255, 0.14)',
+    color: '#d0bcff',
+    bg: '#2b2930',
+    border: '#49454f',
   },
   {
     icon: <FolderSpecialIcon fontSize="medium" />,
     label: 'Projects',
     sublabel: 'code experiments & builds',
     href: '#projects',
-    color: '#86d5e4',
-    bg: 'rgba(134, 213, 228, 0.08)',
-    border: 'rgba(134, 213, 228, 0.2)',
-    hoverBg: 'rgba(134, 213, 228, 0.14)',
+    color: '#ccc2dc',
+    bg: '#2b2930',
+    border: '#49454f',
     isAnchor: true,
   },
   {
@@ -31,10 +29,9 @@ const LINKS = [
     label: 'Contact',
     sublabel: 'reach out & collaborate',
     href: 'mailto:contact@m5rcel.dev',
-    color: '#a5d6a7',
-    bg: 'rgba(165, 214, 167, 0.08)',
-    border: 'rgba(165, 214, 167, 0.2)',
-    hoverBg: 'rgba(165, 214, 167, 0.14)',
+    color: '#efb8c8',
+    bg: '#2b2930',
+    border: '#49454f',
   },
 ]
 
@@ -44,13 +41,13 @@ export default function LinkStack() {
       component="section"
       aria-label="Links"
       sx={{
-        maxWidth: 520,
+        maxWidth: 600,
         mx: 'auto',
         px: { xs: 2, sm: 3 },
-        mb: 5,
+        mb: { xs: 4, sm: 5 },
       }}
     >
-      <Stack spacing={1.5}>
+      <Stack spacing={2}>
         {LINKS.map((link, i) => (
           <Card
             key={link.label}
@@ -58,21 +55,20 @@ export default function LinkStack() {
             sx={{
               bgcolor: link.bg,
               border: `1px solid ${link.border}`,
-              borderRadius: '20px',
-              backdropFilter: 'blur(16px)',
-              animation: 'fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both',
+              borderRadius: 3,
+              animation: 'fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) both',
               animationDelay: `${i * 0.08}s`,
               '@keyframes fadeInUp': {
                 from: { opacity: 0, transform: 'translateY(20px)' },
                 to: { opacity: 1, transform: 'translateY(0)' },
               },
               '&:hover': {
-                bgcolor: link.hoverBg,
-                transform: 'translateY(-3px) scale(1.01)',
-                boxShadow: `0 12px 40px rgba(0,0,0,0.4), 0 0 0 1px ${link.color}`,
-                border: `1px solid ${link.color}`,
+                bgcolor: '#36343b',  // M3 surface container highest
+                // M3 elevation level 1
+                boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)',
+                border: `1px solid #938f99`,
               },
-              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
             }}
           >
             <CardActionArea
@@ -90,11 +86,12 @@ export default function LinkStack() {
               }
               sx={{
                 px: 3,
-                py: 2,
+                py: 2.5,
+                minHeight: 80,  // M3 minimum touch target with content
                 display: 'flex',
                 alignItems: 'center',
                 gap: 2.5,
-                borderRadius: '20px',
+                borderRadius: 3,
                 '& .MuiTouchRipple-root .MuiTouchRipple-rippleVisible': {
                   color: link.color,
                   opacity: 0.25,
@@ -107,17 +104,12 @@ export default function LinkStack() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  width: 40,
-                  height: 40,
+                  width: 48,
+                  height: 48,
                   borderRadius: '50%',
-                  bgcolor: `${link.color}18`,
+                  bgcolor: 'rgba(208, 188, 255, 0.12)',
                   flexShrink: 0,
-                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                  '.MuiCardActionArea-root:hover &': {
-                    transform: 'rotate(5deg) scale(1.1)',
-                    bgcolor: `${link.color}30`,
-                    boxShadow: `0 0 20px ${link.color}40`,
-                  },
+                  transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
                 }}
               >
                 {link.icon}
@@ -125,16 +117,16 @@ export default function LinkStack() {
               <Box sx={{ flex: 1, textAlign: 'left' }}>
                 <Typography
                   variant="titleMedium"
-                  sx={{ color: '#e6e0f0', fontWeight: 600, display: 'block', mb: 0.25 }}
+                  sx={{ color: '#e6e1e5', fontWeight: 500, display: 'block', mb: 0.5 }}
                 >
                   {link.label}
                 </Typography>
-                <Typography variant="bodySmall" sx={{ color: '#b0aac8' }}>
+                <Typography variant="bodySmall" sx={{ color: '#cac4d0' }}>
                   {link.sublabel}
                 </Typography>
               </Box>
               <OpenInNewIcon
-                sx={{ fontSize: 16, color: link.color, opacity: 0.6, flexShrink: 0 }}
+                sx={{ fontSize: 18, color: '#938f99', flexShrink: 0 }}
               />
             </CardActionArea>
           </Card>
