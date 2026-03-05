@@ -50,8 +50,8 @@ function LanguageChip({ language }) {
         color: color,
         border: `1px solid ${color}40`,
         fontFamily: '"Roboto Mono", monospace',
-        fontSize: '0.7rem',
-        height: 24,
+        fontSize: '11px',
+        height: 28,
         '& .MuiChip-label': { px: 1 },
       }}
     />
@@ -63,23 +63,23 @@ function ProjectCard({ repo, delay = 0 }) {
     <Card
       elevation={0}
       sx={{
-        bgcolor: 'rgba(255,255,255,0.04)',
-        border: '1px solid rgba(255,255,255,0.08)',
-        borderRadius: '20px',
+        bgcolor: '#2b2930',
+        border: '1px solid #49454f',
+        borderRadius: 3,
         height: '100%',
-        animation: 'fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both',
+        animation: 'fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) both',
         animationDelay: `${delay}s`,
         '@keyframes fadeInUp': {
           from: { opacity: 0, transform: 'translateY(20px)' },
           to: { opacity: 1, transform: 'translateY(0)' },
         },
         '&:hover': {
-          bgcolor: 'rgba(255,255,255,0.08)',
-          transform: 'translateY(-4px) scale(1.01)',
-          boxShadow: '0 16px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(203,184,255,0.4)',
-          border: '1px solid rgba(203,184,255,0.35)',
+          bgcolor: '#36343b',
+          // M3 elevation level 2
+          boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15)',
+          border: '1px solid #938f99',
         },
-        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+        transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
       }}
     >
       <CardActionArea
@@ -87,15 +87,15 @@ function ProjectCard({ repo, delay = 0 }) {
         target="_blank"
         rel="noopener noreferrer"
         component="a"
-        sx={{ height: '100%', borderRadius: '20px' }}
+        sx={{ height: '100%', borderRadius: 3 }}
       >
-        <CardContent sx={{ p: 2.5, height: '100%', display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+        <CardContent sx={{ p: 3, height: '100%', display: 'flex', flexDirection: 'column', gap: 2 }}>
           <Typography
-            variant="titleSmall"
+            variant="titleMedium"
             sx={{
-              color: '#cbb8ff',
+              color: '#d0bcff',
               fontFamily: '"Roboto Mono", monospace',
-              fontWeight: 600,
+              fontWeight: 500,
               wordBreak: 'break-word',
             }}
           >
@@ -103,11 +103,10 @@ function ProjectCard({ repo, delay = 0 }) {
           </Typography>
 
           <Typography
-            variant="bodySmall"
+            variant="bodyMedium"
             sx={{
-              color: '#b0aac8',
+              color: '#cac4d0',
               flex: 1,
-              lineHeight: 1.5,
               display: '-webkit-box',
               WebkitLineClamp: 3,
               WebkitBoxOrient: 'vertical',
@@ -120,14 +119,14 @@ function ProjectCard({ repo, delay = 0 }) {
           <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap" gap={1}>
             <LanguageChip language={repo.language} />
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, ml: 'auto' }}>
-              <StarIcon sx={{ fontSize: 14, color: '#efb8c8' }} />
-              <Typography variant="labelSmall" sx={{ color: '#efb8c8' }}>
+              <StarIcon sx={{ fontSize: 16, color: '#efb8c8' }} />
+              <Typography variant="labelMedium" sx={{ color: '#efb8c8' }}>
                 {repo.stargazers_count}
               </Typography>
               {repo.forks_count > 0 && (
                 <>
-                  <ForkRightIcon sx={{ fontSize: 14, color: '#86d5e4', ml: 0.5 }} />
-                  <Typography variant="labelSmall" sx={{ color: '#86d5e4' }}>
+                  <ForkRightIcon sx={{ fontSize: 16, color: '#ccc2dc', ml: 0.5 }} />
+                  <Typography variant="labelMedium" sx={{ color: '#ccc2dc' }}>
                     {repo.forks_count}
                   </Typography>
                 </>
@@ -145,18 +144,18 @@ function SkeletonCard() {
     <Card
       elevation={0}
       sx={{
-        bgcolor: 'rgba(255,255,255,0.04)',
-        border: '1px solid rgba(255,255,255,0.08)',
-        borderRadius: '20px',
+        bgcolor: '#2b2930',
+        border: '1px solid #49454f',
+        borderRadius: 3,
       }}
     >
-      <CardContent sx={{ p: 2.5 }}>
-        <Skeleton variant="text" width="60%" height={20} sx={{ bgcolor: '#2e2e40', mb: 1 }} />
-        <Skeleton variant="text" width="90%" height={16} sx={{ bgcolor: '#2e2e40' }} />
-        <Skeleton variant="text" width="80%" height={16} sx={{ bgcolor: '#2e2e40', mb: 1 }} />
-        <Stack direction="row" spacing={1} mt={1}>
-          <Skeleton variant="rounded" width={64} height={24} sx={{ bgcolor: '#2e2e40', borderRadius: 1 }} />
-          <Skeleton variant="rounded" width={40} height={24} sx={{ bgcolor: '#2e2e40', borderRadius: 1, ml: 'auto !important' }} />
+      <CardContent sx={{ p: 3 }}>
+        <Skeleton variant="text" width="60%" height={24} sx={{ bgcolor: '#36343b', mb: 1 }} />
+        <Skeleton variant="text" width="90%" height={20} sx={{ bgcolor: '#36343b' }} />
+        <Skeleton variant="text" width="80%" height={20} sx={{ bgcolor: '#36343b', mb: 2 }} />
+        <Stack direction="row" spacing={1} mt={2}>
+          <Skeleton variant="rounded" width={80} height={28} sx={{ bgcolor: '#36343b', borderRadius: 2 }} />
+          <Skeleton variant="rounded" width={48} height={28} sx={{ bgcolor: '#36343b', borderRadius: 2, ml: 'auto !important' }} />
         </Stack>
       </CardContent>
     </Card>
@@ -190,31 +189,25 @@ export default function FeaturedProjects() {
       component="section"
       aria-label="Featured Projects"
       sx={{
-        maxWidth: 880,
+        maxWidth: 1200,
         mx: 'auto',
         px: { xs: 2, sm: 3 },
-        mb: 5,
+        mb: { xs: 4, sm: 5 },
       }}
     >
       <Typography
-        variant="titleMedium"
+        variant="titleLarge"
         component="h2"
         sx={{
-          color: '#86d5e4',
-          fontFamily: '"Roboto Mono", monospace',
-          letterSpacing: '0.15em',
-          textTransform: 'uppercase',
-          mb: 2.5,
+          color: '#d0bcff',
+          fontWeight: 400,
+          mb: 3,
           display: 'flex',
           alignItems: 'center',
-          gap: 1,
-          '&::before': {
-            content: '"_"',
-            color: '#cbb8ff',
-          },
+          gap: 1.5,
         }}
       >
-        featured projects
+        Featured Projects
       </Typography>
 
       <Box
@@ -233,8 +226,8 @@ export default function FeaturedProjects() {
               sx={{
                 gridColumn: '1 / -1',
                 textAlign: 'center',
-                py: 4,
-                color: '#b0aac8',
+                py: 6,
+                color: '#cac4d0',
               }}
             >
               <Typography variant="bodyMedium">No public repositories found.</Typography>
