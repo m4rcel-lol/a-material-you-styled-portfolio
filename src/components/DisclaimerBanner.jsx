@@ -23,48 +23,36 @@ export default function DisclaimerBanner() {
         aria-live="polite"
         sx={{
           width: '100%',
-          background: 'linear-gradient(90deg, #1e1a2e 0%, #211b38 100%)',
-          borderBottom: '1px solid rgba(203,184,255,0.18)',
+          bgcolor: '#211F26',
+          borderBottom: '1px solid #49454F',
           display: 'flex',
           alignItems: 'center',
           gap: 1.5,
           px: { xs: 2, sm: 4 },
           py: 1.25,
           boxSizing: 'border-box',
-          animation: 'slideInDown 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-          '@keyframes slideInDown': {
-            from: { opacity: 0, transform: 'translateY(-20px)' },
-            to: { opacity: 1, transform: 'translateY(0)' },
-          },
         }}
       >
         <InfoOutlinedIcon
           fontSize="small"
           sx={{
-            color: '#cbb8ff',
+            color: 'primary.main',
             flexShrink: 0,
-            animation: 'pulse 2s ease-in-out infinite',
-            '@keyframes pulse': {
-              '0%, 100%': { opacity: 1 },
-              '50%': { opacity: 0.6 },
-            },
           }}
         />
         <Typography
-          variant="labelSmall"
+          variant="bodySmall"
           sx={{
-            color: '#b0aac8',
-            fontFamily: '"Roboto Mono", monospace',
-            letterSpacing: '0.05em',
+            color: 'text.secondary',
             lineHeight: 1.6,
             flex: 1,
           }}
         >
-          <Box component="span" sx={{ color: '#cbb8ff', fontWeight: 600 }}>
+          <Box component="span" sx={{ color: 'primary.main', fontWeight: 500 }}>
             Disclaimer:{' '}
           </Box>
           This is a personal portfolio website. The domain{' '}
-          <Box component="span" sx={{ color: '#efb8c8' }}>
+          <Box component="span" sx={{ color: 'tertiary.main' }}>
             governmental.gay
           </Box>{' '}
           or any subdomain is not affiliated with, endorsed by, or representative of any government,
@@ -76,13 +64,10 @@ export default function DisclaimerBanner() {
           onClick={handleDismiss}
           aria-label="Dismiss disclaimer"
           sx={{
-            color: '#4a4a6a',
+            color: 'text.secondary',
             flexShrink: 0,
-            transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
             '&:hover': {
-              color: '#b0aac8',
-              background: 'rgba(203,184,255,0.12)',
-              transform: 'rotate(90deg)',
+              bgcolor: 'rgba(208, 188, 255, 0.08)',
             },
           }}
         >
