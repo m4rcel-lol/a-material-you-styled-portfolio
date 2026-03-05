@@ -63,7 +63,7 @@ export default function PCSpecs() {
         sx={{
           bgcolor: 'rgba(28, 28, 42, 0.6)',
           backdropFilter: 'blur(12px)',
-          borderRadius: 3,
+          borderRadius: 1,
           border: '1px solid rgba(255,255,255,0.08)',
           p: { xs: 3, md: 4 },
         }}
@@ -105,7 +105,7 @@ export default function PCSpecs() {
                   gap: 1.5,
                   p: 2,
                   bgcolor: 'rgba(255,255,255,0.03)',
-                  borderRadius: 2,
+                  borderRadius: 1,
                   border: '1px solid rgba(255,255,255,0.06)',
                   transition: 'all 0.3s ease',
                   '&:hover': {
@@ -122,7 +122,7 @@ export default function PCSpecs() {
                     justifyContent: 'center',
                     width: 36,
                     height: 36,
-                    borderRadius: 2,
+                    borderRadius: 1,
                     bgcolor: `${spec.color}20`,
                     color: spec.color,
                     flexShrink: 0,
