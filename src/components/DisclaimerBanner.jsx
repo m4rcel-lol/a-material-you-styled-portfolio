@@ -76,12 +76,13 @@ export default function DisclaimerBanner() {
           onClick={handleDismiss}
           aria-label="Dismiss disclaimer"
           sx={{
-            color: '#4a4a6a',
+            color: '#938f99',
             flexShrink: 0,
+            borderRadius: 2, // M3 small shape (8px)
             transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
             '&:hover': {
-              color: '#b0aac8',
-              background: 'rgba(203,184,255,0.12)',
+              color: '#cbb8ff',
+              background: 'rgba(203,184,255,0.08)',
               transform: 'rotate(90deg)',
             },
           }}

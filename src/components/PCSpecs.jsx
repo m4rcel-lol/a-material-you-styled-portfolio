@@ -65,16 +65,17 @@ export default function PCSpecs() {
     >
       <Box
         sx={{
-          bgcolor: 'rgba(28, 28, 42, 0.6)',
+          bgcolor: 'rgba(28, 28, 42, 0.7)',
           backdropFilter: 'blur(16px)',
-          borderRadius: 3,
+          borderRadius: 3, // M3 large shape (16px)
           border: '1px solid rgba(255,255,255,0.08)',
           p: { xs: 3, md: 4 },
           transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          boxShadow: '0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)',
           '&:hover': {
-            bgcolor: 'rgba(28, 28, 42, 0.75)',
+            bgcolor: 'rgba(28, 28, 42, 0.85)',
             border: '1px solid rgba(203,184,255,0.15)',
-            boxShadow: '0 8px 32px rgba(203,184,255,0.1)',
+            boxShadow: '0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.3)',
           },
         }}
       >
@@ -100,6 +101,8 @@ export default function PCSpecs() {
               border: '1px solid rgba(239, 184, 200, 0.25)',
               fontFamily: '"Roboto Mono", monospace',
               fontSize: '0.7rem',
+              height: 32, // M3 chip height
+              borderRadius: 2, // M3 small shape (8px)
             }}
           />
         </Box>
@@ -114,15 +117,15 @@ export default function PCSpecs() {
                   alignItems: 'flex-start',
                   gap: 1.5,
                   p: 2,
-                  bgcolor: 'rgba(255,255,255,0.03)',
-                  borderRadius: 2,
+                  bgcolor: 'rgba(255,255,255,0.04)',
+                  borderRadius: 2, // M3 small shape (8px)
                   border: '1px solid rgba(255,255,255,0.06)',
                   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                   '&:hover': {
-                    bgcolor: 'rgba(255,255,255,0.06)',
+                    bgcolor: 'rgba(255,255,255,0.07)',
                     border: `1px solid ${spec.color}60`,
-                    transform: 'translateY(-3px)',
-                    boxShadow: `0 8px 24px rgba(0,0,0,0.3), 0 0 0 1px ${spec.color}30`,
+                    transform: 'translateY(-2px)',
+                    boxShadow: '0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15)',
                   },
                 }}
               >
@@ -133,15 +136,15 @@ export default function PCSpecs() {
                     justifyContent: 'center',
                     width: 36,
                     height: 36,
-                    borderRadius: 1.5,
+                    borderRadius: 1.5, // M3 medium shape (12px)
                     bgcolor: `${spec.color}20`,
                     color: spec.color,
                     flexShrink: 0,
                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                     '.MuiBox-root:hover > &': {
-                      transform: 'rotate(-5deg) scale(1.1)',
-                      bgcolor: `${spec.color}35`,
-                      boxShadow: `0 0 16px ${spec.color}40`,
+                      transform: 'rotate(-5deg) scale(1.05)',
+                      bgcolor: `${spec.color}30`,
+                      boxShadow: '0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)',
                     },
                   }}
                 >

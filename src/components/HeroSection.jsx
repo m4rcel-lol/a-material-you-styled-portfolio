@@ -156,14 +156,15 @@ export default function HeroSection() {
           border: '1px solid rgba(203, 184, 255, 0.25)',
           fontFamily: '"Roboto Mono", monospace',
           fontSize: '0.75rem',
+          height: 32, // M3 chip height
+          borderRadius: 2, // M3 small shape (8px)
           transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
           cursor: 'default',
           '& .MuiChip-icon': { color: '#cbb8ff' },
           '&:hover': {
             bgcolor: 'rgba(203, 184, 255, 0.18)',
             border: '1px solid rgba(203, 184, 255, 0.4)',
-            transform: 'scale(1.05)',
-            boxShadow: '0 4px 16px rgba(203, 184, 255, 0.25)',
+            boxShadow: '0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)',
           },
         }}
       />
@@ -204,17 +205,18 @@ export default function HeroSection() {
               gap: 0.75,
               px: 2,
               py: 1,
-              borderRadius: 3,
-              bgcolor: 'rgba(255,255,255,0.04)',
+              borderRadius: 2, // M3 small shape (8px)
+              bgcolor: 'rgba(255,255,255,0.05)',
               border: '1px solid rgba(255,255,255,0.08)',
               backdropFilter: 'blur(8px)',
               transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
               cursor: 'default',
+              boxShadow: '0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)',
               '&:hover': {
-                bgcolor: 'rgba(255,255,255,0.07)',
+                bgcolor: 'rgba(255,255,255,0.08)',
                 border: '1px solid rgba(134, 213, 228, 0.3)',
-                transform: 'translateY(-2px) scale(1.02)',
-                boxShadow: '0 8px 24px rgba(134, 213, 228, 0.15)',
+                transform: 'translateY(-2px)',
+                boxShadow: '0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.3)',
               },
             }}
           >

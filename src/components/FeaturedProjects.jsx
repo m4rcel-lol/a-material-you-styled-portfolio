@@ -51,7 +51,8 @@ function LanguageChip({ language }) {
         border: `1px solid ${color}40`,
         fontFamily: '"Roboto Mono", monospace',
         fontSize: '0.7rem',
-        height: 24,
+        height: 32, // M3 chip height
+        borderRadius: 2, // M3 small shape (8px)
         '& .MuiChip-label': { px: 1 },
       }}
     />
@@ -61,11 +62,11 @@ function LanguageChip({ language }) {
 function ProjectCard({ repo, delay = 0 }) {
   return (
     <Card
-      elevation={0}
+      elevation={1}
       sx={{
-        bgcolor: 'rgba(255,255,255,0.04)',
+        bgcolor: 'rgba(255,255,255,0.05)',
         border: '1px solid rgba(255,255,255,0.08)',
-        borderRadius: '20px',
+        borderRadius: 3, // M3 large shape (16px)
         height: '100%',
         animation: 'fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both',
         animationDelay: `${delay}s`,
@@ -75,8 +76,8 @@ function ProjectCard({ repo, delay = 0 }) {
         },
         '&:hover': {
           bgcolor: 'rgba(255,255,255,0.08)',
-          transform: 'translateY(-4px) scale(1.01)',
-          boxShadow: '0 16px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(203,184,255,0.4)',
+          transform: 'translateY(-4px)',
+          boxShadow: '0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.3)',
           border: '1px solid rgba(203,184,255,0.35)',
         },
         transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -87,7 +88,7 @@ function ProjectCard({ repo, delay = 0 }) {
         target="_blank"
         rel="noopener noreferrer"
         component="a"
-        sx={{ height: '100%', borderRadius: '20px' }}
+        sx={{ height: '100%', borderRadius: 3 }}
       >
         <CardContent sx={{ p: 2.5, height: '100%', display: 'flex', flexDirection: 'column', gap: 1.5 }}>
           <Typography
@@ -143,11 +144,11 @@ function ProjectCard({ repo, delay = 0 }) {
 function SkeletonCard() {
   return (
     <Card
-      elevation={0}
+      elevation={1}
       sx={{
-        bgcolor: 'rgba(255,255,255,0.04)',
+        bgcolor: 'rgba(255,255,255,0.05)',
         border: '1px solid rgba(255,255,255,0.08)',
-        borderRadius: '20px',
+        borderRadius: 3, // M3 large shape (16px)
       }}
     >
       <CardContent sx={{ p: 2.5 }}>

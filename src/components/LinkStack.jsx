@@ -54,11 +54,11 @@ export default function LinkStack() {
         {LINKS.map((link, i) => (
           <Card
             key={link.label}
-            elevation={0}
+            elevation={1}
             sx={{
               bgcolor: link.bg,
               border: `1px solid ${link.border}`,
-              borderRadius: '20px',
+              borderRadius: 3, // M3 large shape (16px)
               backdropFilter: 'blur(16px)',
               animation: 'fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both',
               animationDelay: `${i * 0.08}s`,
@@ -68,8 +68,8 @@ export default function LinkStack() {
               },
               '&:hover': {
                 bgcolor: link.hoverBg,
-                transform: 'translateY(-3px) scale(1.01)',
-                boxShadow: `0 12px 40px rgba(0,0,0,0.4), 0 0 0 1px ${link.color}`,
+                transform: 'translateY(-3px)',
+                boxShadow: `0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.3)`,
                 border: `1px solid ${link.color}`,
               },
               transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -94,10 +94,10 @@ export default function LinkStack() {
                 display: 'flex',
                 alignItems: 'center',
                 gap: 2.5,
-                borderRadius: '20px',
+                borderRadius: 3, // M3 large shape (16px)
                 '& .MuiTouchRipple-root .MuiTouchRipple-rippleVisible': {
                   color: link.color,
-                  opacity: 0.25,
+                  opacity: 0.12, // M3 state layer pressed opacity
                 },
               }}
             >
