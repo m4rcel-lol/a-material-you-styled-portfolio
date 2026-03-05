@@ -2,7 +2,6 @@ import { createTheme, ThemeProvider, CssBaseline } from '@mui/material'
 import HeroSection from './components/HeroSection'
 import LinkStack from './components/LinkStack'
 import FeaturedProjects from './components/FeaturedProjects'
-import CreativeSection from './components/CreativeSection'
 import Footer from './components/Footer'
 import { Box } from '@mui/material'
 
@@ -113,7 +112,6 @@ export default function App() {
         <HeroSection />
         <LinkStack />
         <FeaturedProjects />
-        <CreativeSection />
         <Footer />
       </Box>
     </ThemeProvider>
