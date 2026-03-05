@@ -78,7 +78,10 @@ const theme = createTheme({
         root: {
           borderRadius: 24,
           backgroundImage: 'none',
-          transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          '&:hover': {
+            transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+          },
         },
       },
     },
@@ -88,6 +91,11 @@ const theme = createTheme({
           borderRadius: 20,
           textTransform: 'none',
           fontWeight: 500,
+          transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+          '&:hover': {
+            transform: 'translateY(-1px)',
+            boxShadow: '0 4px 12px rgba(203, 184, 255, 0.3)',
+          },
         },
       },
     },
@@ -96,6 +104,17 @@ const theme = createTheme({
         root: {
           borderRadius: 8,
           height: 28,
+          transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+          '&:hover': {
+            transform: 'scale(1.05)',
+          },
+        },
+      },
+    },
+    MuiCardActionArea: {
+      styleOverrides: {
+        root: {
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
         },
       },
     },

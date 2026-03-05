@@ -39,10 +39,10 @@ export default function HeroSection() {
         textAlign: 'center',
         px: 2,
         mb: 5,
-        animation: 'fadeInUp 0.7s ease both',
-        '@keyframes fadeInUp': {
-          from: { opacity: 0, transform: 'translateY(28px)' },
-          to: { opacity: 1, transform: 'translateY(0)' },
+        animation: 'fadeInScale 0.8s cubic-bezier(0.4, 0, 0.2, 1) both',
+        '@keyframes fadeInScale': {
+          from: { opacity: 0, transform: 'scale(0.95) translateY(20px)' },
+          to: { opacity: 1, transform: 'scale(1) translateY(0)' },
         },
       }}
     >
@@ -51,6 +51,11 @@ export default function HeroSection() {
         sx={{
           position: 'relative',
           mb: 3,
+          animation: 'float 6s ease-in-out infinite',
+          '@keyframes float': {
+            '0%, 100%': { transform: 'translateY(0px)' },
+            '50%': { transform: 'translateY(-8px)' },
+          },
           '&::before': {
             content: '""',
             position: 'absolute',
@@ -91,7 +96,16 @@ export default function HeroSection() {
               zIndex: 2,
               position: 'relative',
               border: '3px solid #1c1c2a',
-              boxShadow: '0 8px 32px rgba(203, 184, 255, 0.25)',
+              boxShadow: '0 8px 32px rgba(203, 184, 255, 0.35)',
+              animation: 'glow 3s ease-in-out infinite',
+              '@keyframes glow': {
+                '0%, 100%': {
+                  boxShadow: '0 8px 32px rgba(203, 184, 255, 0.35)',
+                },
+                '50%': {
+                  boxShadow: '0 8px 40px rgba(203, 184, 255, 0.6), 0 0 60px rgba(239, 184, 200, 0.3)',
+                },
+              },
             }}
           />
         )}
@@ -142,7 +156,15 @@ export default function HeroSection() {
           border: '1px solid rgba(203, 184, 255, 0.25)',
           fontFamily: '"Roboto Mono", monospace',
           fontSize: '0.75rem',
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          cursor: 'default',
           '& .MuiChip-icon': { color: '#cbb8ff' },
+          '&:hover': {
+            bgcolor: 'rgba(203, 184, 255, 0.18)',
+            border: '1px solid rgba(203, 184, 255, 0.4)',
+            transform: 'scale(1.05)',
+            boxShadow: '0 4px 16px rgba(203, 184, 255, 0.25)',
+          },
         }}
       />
 
@@ -186,6 +208,14 @@ export default function HeroSection() {
               bgcolor: 'rgba(255,255,255,0.04)',
               border: '1px solid rgba(255,255,255,0.08)',
               backdropFilter: 'blur(8px)',
+              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              cursor: 'default',
+              '&:hover': {
+                bgcolor: 'rgba(255,255,255,0.07)',
+                border: '1px solid rgba(134, 213, 228, 0.3)',
+                transform: 'translateY(-2px) scale(1.02)',
+                boxShadow: '0 8px 24px rgba(134, 213, 228, 0.15)',
+              },
             }}
           >
             <Box sx={{ color: '#86d5e4', display: 'flex', alignItems: 'center' }}>{icon}</Box>
