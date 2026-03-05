@@ -22,6 +22,12 @@ A **single-page bio website** for [m4rcel-lol](https://github.com/m4rcel-lol) (a
 - **MUI (Material UI) v7** + `@emotion`
 - `@fontsource/roboto` for the Roboto typeface
 
+## 📸 Screenshots
+
+| Hero & Profile | Links · Projects · Creative |
+|:-:|:-:|
+| ![Hero section showing avatar, username m4rcel, tagline and GitHub stats pills](https://github.com/user-attachments/assets/4ac3860d-83f7-4f24-bc37-389836a0bbf0) | ![Link cards, Featured Projects and Creative Work sections](https://github.com/user-attachments/assets/0225839b-9106-4712-8fa0-87ec6eceb326) |
+
 ## 🚀 Getting Started
 
 ```bash
@@ -35,3 +41,29 @@ Build for production:
 npm run build
 npm run preview
 ```
+
+## ☁️ Deploy
+
+### Vercel
+
+Click the button below or run `npx vercel` in the project root — Vercel will auto-detect Vite and use the settings in `vercel.json`.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fm4rcel-lol%2Fa-material-you-styled-portfolio)
+
+| Setting | Value |
+|---|---|
+| Build command | `npm run build` |
+| Output directory | `dist` |
+
+### Cloudflare Pages
+
+1. Go to **Cloudflare Dashboard → Workers & Pages → Create → Pages → Connect to Git**
+2. Select this repository
+3. Set the build configuration:
+
+| Setting | Value |
+|---|---|
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+
+SPA fallback routing is handled automatically via `public/_redirects`.
