@@ -54,7 +54,7 @@ export default function DisclaimerBanner() {
           <Box component="span" sx={{ color: '#efb8c8' }}>
             governmental.gay
           </Box>{' '}
-          is not affiliated with, endorsed by, or representative of any government,
+          or any subdomain is not affiliated with, endorsed by, or representative of any government,
           political body, or institution — nor does it intend to mock or parody any
           government, official, or country. The name is purely a creative choice.
         </Typography>
