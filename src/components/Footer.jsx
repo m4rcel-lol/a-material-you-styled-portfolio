@@ -1,5 +1,10 @@
 import { Box, Typography } from '@mui/material'
 
+const baseTextSx = {
+  color: '#4a4a6a',
+  fontFamily: '"Roboto Mono", monospace',
+}
+
 export default function Footer() {
   return (
     <Box
@@ -15,13 +20,15 @@ export default function Footer() {
     >
       <Typography
         variant="labelSmall"
-        sx={{
-          color: '#4a4a6a',
-          fontFamily: '"Roboto Mono", monospace',
-          letterSpacing: '0.1em',
-        }}
+        sx={{ ...baseTextSx, letterSpacing: '0.1em', mb: 1 }}
       >
         m4rcel-lol · m5rcel · built with material you ✦ 2026
+      </Typography>
+      <Typography
+        variant="labelSmall"
+        sx={{ ...baseTextSx, letterSpacing: '0.05em', maxWidth: '600px', mx: 'auto', lineHeight: 1.6 }}
+      >
+        disclaimer: governmental.gay is not affiliated with any government whatsoever, nor does it make fun of any type of government or any government in any country.
       </Typography>
     </Box>
   )
