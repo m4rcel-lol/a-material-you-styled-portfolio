@@ -5,9 +5,8 @@ A **single-page bio website** for [m4rcel-lol](https://github.com/m4rcel-lol) (a
 ## ✨ Features
 
 - **Hero section** — circular avatar with animated gradient ring, username, alias, tagline, live GitHub stats
-- **Link stack** — stacked Material elevated cards (GitHub, SoundCloud, Music & Releases, Projects, Contact) with ripple effects and hover elevation
+- **Link stack** — stacked Material elevated cards (GitHub, Projects, Contact) with ripple effects and hover elevation
 - **Featured projects** — dynamically fetched from the GitHub API, sorted by stars, with language chips
-- **Creative section** — music cards for *lost in abyss* (single) and *living zone* (2026 release) with animated waveform visuals
 - **Responsive** — works on mobile and desktop
 
 ## 🎨 Design

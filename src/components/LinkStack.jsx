@@ -1,9 +1,7 @@
 import { Box, Typography, Card, CardActionArea, Stack } from '@mui/material'
 import GitHubIcon from '@mui/icons-material/GitHub'
-import MusicNoteIcon from '@mui/icons-material/MusicNote'
 import EmailIcon from '@mui/icons-material/Email'
 import FolderSpecialIcon from '@mui/icons-material/FolderSpecial'
-import HeadphonesIcon from '@mui/icons-material/Headphones'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 
 const LINKS = [
@@ -16,27 +14,6 @@ const LINKS = [
     bg: 'rgba(203, 184, 255, 0.08)',
     border: 'rgba(203, 184, 255, 0.2)',
     hoverBg: 'rgba(203, 184, 255, 0.14)',
-  },
-  {
-    icon: <HeadphonesIcon fontSize="medium" />,
-    label: 'SoundCloud',
-    sublabel: 'electronic · beats · atmosphere',
-    href: 'https://soundcloud.com/m5rcel',
-    color: '#ffb85f',
-    bg: 'rgba(255, 184, 95, 0.08)',
-    border: 'rgba(255, 184, 95, 0.2)',
-    hoverBg: 'rgba(255, 184, 95, 0.14)',
-  },
-  {
-    icon: <MusicNoteIcon fontSize="medium" />,
-    label: 'Music & Releases',
-    sublabel: 'lost in abyss · living zone (2026)',
-    href: '#creative',
-    color: '#efb8c8',
-    bg: 'rgba(239, 184, 200, 0.08)',
-    border: 'rgba(239, 184, 200, 0.2)',
-    hoverBg: 'rgba(239, 184, 200, 0.14)',
-    isAnchor: true,
   },
   {
     icon: <FolderSpecialIcon fontSize="medium" />,
