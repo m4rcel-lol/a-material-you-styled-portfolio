@@ -41,8 +41,15 @@ export default function HeroSection() {
         mb: 5,
       }}
     >
-      {/* Avatar */}
-      <Box sx={{ mb: 3 }}>
+      {/* Avatar with M3 primaryContainer ring */}
+      <Box
+        sx={{
+          mb: 3,
+          p: 0.5,
+          borderRadius: '50%',
+          bgcolor: '#4F378B',
+        }}
+      >
         {loading ? (
           <Skeleton
             variant="circular"
@@ -57,7 +64,7 @@ export default function HeroSection() {
             sx={{
               width: 112,
               height: 112,
-              border: '3px solid #4F378B',
+              border: '3px solid #141218',
             }}
           />
         )}

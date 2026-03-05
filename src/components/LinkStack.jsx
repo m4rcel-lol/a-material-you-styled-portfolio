@@ -10,7 +10,8 @@ const LINKS = [
     label: 'GitHub',
     sublabel: 'github.com/m4rcel-lol',
     href: 'https://github.com/m4rcel-lol',
-    color: '#D0BCFF',
+    iconBg: '#4F378B',   // M3 primaryContainer
+    iconFg: '#EADDFF',   // M3 onPrimaryContainer
     isAnchor: false,
   },
   {
@@ -18,7 +19,8 @@ const LINKS = [
     label: 'Projects',
     sublabel: 'code experiments & builds',
     href: '#projects',
-    color: '#EFB8C8',
+    iconBg: '#633B48',   // M3 tertiaryContainer
+    iconFg: '#FFD8E4',   // M3 onTertiaryContainer
     isAnchor: true,
   },
   {
@@ -26,7 +28,8 @@ const LINKS = [
     label: 'Contact',
     sublabel: 'reach out & collaborate',
     href: 'mailto:contact@m5rcel.dev',
-    color: '#CCC2DC',
+    iconBg: '#4A4458',   // M3 secondaryContainer
+    iconFg: '#E8DEF8',   // M3 onSecondaryContainer
     isAnchor: false,
   },
 ]
@@ -82,14 +85,14 @@ export default function LinkStack() {
             >
               <Box
                 sx={{
-                  color: link.color,
+                  color: link.iconFg,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   width: 40,
                   height: 40,
                   borderRadius: '50%',
-                  bgcolor: '#4F378B',
+                  bgcolor: link.iconBg,
                   flexShrink: 0,
                 }}
               >

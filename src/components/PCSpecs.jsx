@@ -6,13 +6,20 @@ import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard'
 import MonitorIcon from '@mui/icons-material/Monitor'
 import KeyboardIcon from '@mui/icons-material/Keyboard'
 
+// M3 container tokens for visual variety
+const containers = {
+  primary: { bg: '#4F378B', fg: '#EADDFF' },
+  secondary: { bg: '#4A4458', fg: '#E8DEF8' },
+  tertiary: { bg: '#633B48', fg: '#FFD8E4' },
+}
+
 const PC_SPECS = [
-  { icon: <MemoryIcon />, label: 'CPU', value: 'Intel Core i7-12700K' },
-  { icon: <DeveloperBoardIcon />, label: 'GPU', value: 'NVIDIA RTX 3080' },
-  { icon: <StorageIcon />, label: 'RAM', value: '32GB DDR4 3600MHz' },
-  { icon: <StorageIcon />, label: 'Storage', value: '1TB NVMe SSD' },
-  { icon: <MonitorIcon />, label: 'Monitor', value: '27" 1440p 165Hz' },
-  { icon: <KeyboardIcon />, label: 'Keyboard', value: 'Mechanical 60%' },
+  { icon: <MemoryIcon />, label: 'CPU', value: 'Intel Core i7-12700K', container: containers.primary },
+  { icon: <DeveloperBoardIcon />, label: 'GPU', value: 'NVIDIA RTX 3080', container: containers.tertiary },
+  { icon: <StorageIcon />, label: 'RAM', value: '32GB DDR4 3600MHz', container: containers.secondary },
+  { icon: <StorageIcon />, label: 'Storage', value: '1TB NVMe SSD', container: containers.primary },
+  { icon: <MonitorIcon />, label: 'Monitor', value: '27" 1440p 165Hz', container: containers.tertiary },
+  { icon: <KeyboardIcon />, label: 'Keyboard', value: 'Mechanical 60%', container: containers.secondary },
 ]
 
 export default function PCSpecs() {
@@ -59,7 +66,7 @@ export default function PCSpecs() {
         {/* Specs Grid */}
         <Grid container spacing={2}>
           {PC_SPECS.map((spec, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
               <Box
                 sx={{
                   display: 'flex',
@@ -83,8 +90,8 @@ export default function PCSpecs() {
                     width: 40,
                     height: 40,
                     borderRadius: '50%',
-                    bgcolor: '#4F378B',
-                    color: '#EADDFF',
+                    bgcolor: spec.container.bg,
+                    color: spec.container.fg,
                     flexShrink: 0,
                   }}
                 >
