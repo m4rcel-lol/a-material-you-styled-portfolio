@@ -3,6 +3,7 @@ import HeroSection from './components/HeroSection'
 import LinkStack from './components/LinkStack'
 import FeaturedProjects from './components/FeaturedProjects'
 import Footer from './components/Footer'
+import DisclaimerBanner from './components/DisclaimerBanner'
 import { Box } from '@mui/material'
 
 const theme = createTheme({
@@ -102,6 +103,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <DisclaimerBanner />
       <Box
         sx={{
           minHeight: '100vh',
