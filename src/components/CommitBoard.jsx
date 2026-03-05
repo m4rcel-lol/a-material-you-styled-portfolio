@@ -4,7 +4,6 @@ import GitCommitIcon from '@mui/icons-material/Commit'
 
 const GITHUB_USER = 'm4rcel-lol'
 
-// Helper to get contribution level based on commits
 const getContributionLevel = (count) => {
   if (count === 0) return 0
   if (count < 3) return 1
@@ -13,13 +12,13 @@ const getContributionLevel = (count) => {
   return 4
 }
 
-// Colors for different contribution levels (Material You inspired)
+// M3 tonal primary levels for the heatmap
 const levelColors = {
-  0: 'rgba(74, 74, 106, 0.15)', // outline color, very dim
-  1: 'rgba(203, 184, 255, 0.25)', // primary, light
-  2: 'rgba(203, 184, 255, 0.5)',  // primary, medium
-  3: 'rgba(203, 184, 255, 0.75)', // primary, strong
-  4: 'rgba(203, 184, 255, 1)',    // primary, full
+  0: '#211F26',   // surface container
+  1: '#3C3455',   // primary tone 25
+  2: '#4F378B',   // primary container
+  3: '#8B72CF',   // primary tone 60
+  4: '#D0BCFF',   // primary
 }
 
 export default function CommitBoard() {
@@ -30,13 +29,11 @@ export default function CommitBoard() {
   useEffect(() => {
     const fetchCommitActivity = async () => {
       try {
-        // Fetch recent events from GitHub API
         const response = await fetch(
           `https://api.github.com/users/${GITHUB_USER}/events/public?per_page=100`
         )
         const events = await response.json()
 
-        // Process push events to count commits per day
         const commits = {}
         let total = 0
 
@@ -61,7 +58,6 @@ export default function CommitBoard() {
     fetchCommitActivity()
   }, [])
 
-  // Generate grid data for last 12 weeks (84 days)
   const generateGridData = () => {
     const days = []
     const today = new Date()
@@ -93,38 +89,22 @@ export default function CommitBoard() {
         mx: 'auto',
         px: 2,
         mb: 6,
-        animation: 'fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) both',
-        animationDelay: '0.3s',
-        '@keyframes fadeInUp': {
-          from: { opacity: 0, transform: 'translateY(30px)' },
-          to: { opacity: 1, transform: 'translateY(0)' },
-        },
       }}
     >
       <Box
         sx={{
-          bgcolor: 'rgba(28, 28, 42, 0.6)',
-          backdropFilter: 'blur(16px)',
+          bgcolor: '#1D1B20',
           borderRadius: 3,
-          border: '1px solid rgba(255,255,255,0.08)',
+          border: '1px solid #49454F',
           p: { xs: 3, md: 4 },
-          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-          '&:hover': {
-            bgcolor: 'rgba(28, 28, 42, 0.75)',
-            border: '1px solid rgba(203,184,255,0.15)',
-            boxShadow: '0 8px 32px rgba(203,184,255,0.1)',
-          },
         }}
       >
         {/* Header */}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 3 }}>
-          <GitCommitIcon sx={{ color: '#cbb8ff', fontSize: 24 }} />
+          <GitCommitIcon sx={{ color: 'primary.main', fontSize: 24 }} />
           <Typography
             variant="titleLarge"
-            sx={{
-              color: '#e6e0f0',
-              fontWeight: 600,
-            }}
+            sx={{ color: 'text.primary' }}
           >
             Commit Activity
           </Typography>
@@ -132,13 +112,12 @@ export default function CommitBoard() {
             <Chip
               label={`${totalCommits} commits`}
               size="small"
+              variant="outlined"
               sx={{
                 ml: 'auto',
-                bgcolor: 'rgba(134, 213, 228, 0.12)',
-                color: '#86d5e4',
-                border: '1px solid rgba(134, 213, 228, 0.25)',
-                fontFamily: '"Roboto Mono", monospace',
-                fontSize: '0.7rem',
+                borderColor: '#49454F',
+                color: 'text.secondary',
+                fontSize: '0.75rem',
               }}
             />
           )}
@@ -153,7 +132,7 @@ export default function CommitBoard() {
                 variant="rectangular"
                 width={12}
                 height={12}
-                sx={{ borderRadius: 0.25, bgcolor: '#2e2e40' }}
+                sx={{ borderRadius: 0.5, bgcolor: '#2B2930' }}
               />
             ))}
           </Box>
@@ -183,14 +162,10 @@ export default function CommitBoard() {
                       height: 12,
                       bgcolor: levelColors[day.level],
                       borderRadius: 0.5,
-                      border: '1px solid rgba(255,255,255,0.05)',
                       cursor: 'pointer',
-                      transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+                      transition: 'transform 200ms cubic-bezier(0.2, 0, 0, 1)',
                       '&:hover': {
-                        transform: 'scale(1.4)',
-                        border: '1px solid rgba(203, 184, 255, 0.6)',
-                        boxShadow: '0 0 8px rgba(203, 184, 255, 0.4)',
-                        zIndex: 10,
+                        transform: 'scale(1.3)',
                       },
                     }}
                   />
@@ -208,10 +183,7 @@ export default function CommitBoard() {
                 mt: 2,
               }}
             >
-              <Typography
-                variant="labelSmall"
-                sx={{ color: '#b0aac8', fontSize: '0.65rem' }}
-              >
+              <Typography variant="labelSmall" sx={{ color: 'text.secondary', fontSize: '0.65rem' }}>
                 Less
               </Typography>
               {[0, 1, 2, 3, 4].map((level) => (
@@ -221,15 +193,11 @@ export default function CommitBoard() {
                     width: 12,
                     height: 12,
                     bgcolor: levelColors[level],
-                    borderRadius: 0.25,
-                    border: '1px solid rgba(255,255,255,0.05)',
+                    borderRadius: 0.5,
                   }}
                 />
               ))}
-              <Typography
-                variant="labelSmall"
-                sx={{ color: '#b0aac8', fontSize: '0.65rem' }}
-              >
+              <Typography variant="labelSmall" sx={{ color: 'text.secondary', fontSize: '0.65rem' }}>
                 More
               </Typography>
             </Box>
