@@ -103,16 +103,17 @@ export default function CommitBoard() {
     >
       <Box
         sx={{
-          bgcolor: 'rgba(28, 28, 42, 0.6)',
+          bgcolor: 'rgba(28, 28, 42, 0.7)',
           backdropFilter: 'blur(16px)',
-          borderRadius: 3,
+          borderRadius: 3, // M3 large shape (16px)
           border: '1px solid rgba(255,255,255,0.08)',
           p: { xs: 3, md: 4 },
           transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          boxShadow: '0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)',
           '&:hover': {
-            bgcolor: 'rgba(28, 28, 42, 0.75)',
+            bgcolor: 'rgba(28, 28, 42, 0.85)',
             border: '1px solid rgba(203,184,255,0.15)',
-            boxShadow: '0 8px 32px rgba(203,184,255,0.1)',
+            boxShadow: '0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.3)',
           },
         }}
       >
@@ -139,6 +140,8 @@ export default function CommitBoard() {
                 border: '1px solid rgba(134, 213, 228, 0.25)',
                 fontFamily: '"Roboto Mono", monospace',
                 fontSize: '0.7rem',
+                height: 32, // M3 chip height
+                borderRadius: 2, // M3 small shape (8px)
               }}
             />
           )}
@@ -182,14 +185,14 @@ export default function CommitBoard() {
                       width: 12,
                       height: 12,
                       bgcolor: levelColors[day.level],
-                      borderRadius: 0.5,
+                      borderRadius: 0.5, // M3 extra small shape (4px)
                       border: '1px solid rgba(255,255,255,0.05)',
                       cursor: 'pointer',
                       transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
                       '&:hover': {
                         transform: 'scale(1.4)',
                         border: '1px solid rgba(203, 184, 255, 0.6)',
-                        boxShadow: '0 0 8px rgba(203, 184, 255, 0.4)',
+                        boxShadow: '0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)',
                         zIndex: 10,
                       },
                     }}
