@@ -93,17 +93,27 @@ export default function CommitBoard() {
         mx: 'auto',
         px: 2,
         mb: 6,
-        animation: 'fadeInUp 0.7s ease both',
+        animation: 'fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) both',
         animationDelay: '0.3s',
+        '@keyframes fadeInUp': {
+          from: { opacity: 0, transform: 'translateY(30px)' },
+          to: { opacity: 1, transform: 'translateY(0)' },
+        },
       }}
     >
       <Box
         sx={{
           bgcolor: 'rgba(28, 28, 42, 0.6)',
-          backdropFilter: 'blur(12px)',
-          borderRadius: 1,
+          backdropFilter: 'blur(16px)',
+          borderRadius: 3,
           border: '1px solid rgba(255,255,255,0.08)',
           p: { xs: 3, md: 4 },
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          '&:hover': {
+            bgcolor: 'rgba(28, 28, 42, 0.75)',
+            border: '1px solid rgba(203,184,255,0.15)',
+            boxShadow: '0 8px 32px rgba(203,184,255,0.1)',
+          },
         }}
       >
         {/* Header */}
@@ -172,13 +182,15 @@ export default function CommitBoard() {
                       width: 12,
                       height: 12,
                       bgcolor: levelColors[day.level],
-                      borderRadius: 0.25,
+                      borderRadius: 0.5,
                       border: '1px solid rgba(255,255,255,0.05)',
                       cursor: 'pointer',
-                      transition: 'all 0.2s ease',
+                      transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
                       '&:hover': {
-                        transform: 'scale(1.3)',
-                        border: '1px solid rgba(203, 184, 255, 0.5)',
+                        transform: 'scale(1.4)',
+                        border: '1px solid rgba(203, 184, 255, 0.6)',
+                        boxShadow: '0 0 8px rgba(203, 184, 255, 0.4)',
+                        zIndex: 10,
                       },
                     }}
                   />

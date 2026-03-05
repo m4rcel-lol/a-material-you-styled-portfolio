@@ -59,8 +59,8 @@ export default function LinkStack() {
               bgcolor: link.bg,
               border: `1px solid ${link.border}`,
               borderRadius: '20px',
-              backdropFilter: 'blur(12px)',
-              animation: 'fadeInUp 0.6s ease both',
+              backdropFilter: 'blur(16px)',
+              animation: 'fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both',
               animationDelay: `${i * 0.08}s`,
               '@keyframes fadeInUp': {
                 from: { opacity: 0, transform: 'translateY(20px)' },
@@ -68,11 +68,11 @@ export default function LinkStack() {
               },
               '&:hover': {
                 bgcolor: link.hoverBg,
-                transform: 'translateY(-2px)',
-                boxShadow: `0 8px 32px rgba(0,0,0,0.35), 0 0 0 1px ${link.border}`,
-                border: `1px solid ${link.color}40`,
+                transform: 'translateY(-3px) scale(1.01)',
+                boxShadow: `0 12px 40px rgba(0,0,0,0.4), 0 0 0 1px ${link.color}`,
+                border: `1px solid ${link.color}`,
               },
-              transition: 'all 0.2s cubic-bezier(0.2, 0, 0, 1)',
+              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
             }}
           >
             <CardActionArea
@@ -112,6 +112,12 @@ export default function LinkStack() {
                   borderRadius: '50%',
                   bgcolor: `${link.color}18`,
                   flexShrink: 0,
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  '.MuiCardActionArea-root:hover &': {
+                    transform: 'rotate(5deg) scale(1.1)',
+                    bgcolor: `${link.color}30`,
+                    boxShadow: `0 0 20px ${link.color}40`,
+                  },
                 }}
               >
                 {link.icon}

@@ -14,8 +14,12 @@ export default function AdBanner() {
         py: 3,
         mx: 'auto',
         maxWidth: 'fit-content',
-        animation: 'fadeInUp 0.7s ease both',
+        animation: 'fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) both',
         animationDelay: '0.5s',
+        '@keyframes fadeInUp': {
+          from: { opacity: 0, transform: 'translateY(30px)' },
+          to: { opacity: 1, transform: 'translateY(0)' },
+        },
       }}
     >
       <Box
@@ -28,16 +32,17 @@ export default function AdBanner() {
           width: '728px',
           height: '90px',
           maxWidth: '100%',
-          borderRadius: 1,
+          borderRadius: 2,
           overflow: 'hidden',
           border: '1px solid rgba(255,255,255,0.08)',
           bgcolor: 'rgba(28, 28, 42, 0.6)',
-          backdropFilter: 'blur(12px)',
-          transition: 'all 0.3s ease',
+          backdropFilter: 'blur(16px)',
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
           '&:hover': {
-            transform: 'translateY(-2px)',
-            border: '1px solid rgba(203, 184, 255, 0.3)',
-            boxShadow: '0 8px 24px rgba(203, 184, 255, 0.15)',
+            transform: 'translateY(-3px) scale(1.01)',
+            border: '1px solid rgba(203, 184, 255, 0.4)',
+            boxShadow: '0 12px 32px rgba(203, 184, 255, 0.2)',
+            bgcolor: 'rgba(28, 28, 42, 0.8)',
           },
         }}
       >

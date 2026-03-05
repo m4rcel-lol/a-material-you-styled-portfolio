@@ -55,17 +55,27 @@ export default function PCSpecs() {
         mx: 'auto',
         px: 2,
         mb: 6,
-        animation: 'fadeInUp 0.7s ease both',
+        animation: 'fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) both',
         animationDelay: '0.4s',
+        '@keyframes fadeInUp': {
+          from: { opacity: 0, transform: 'translateY(30px)' },
+          to: { opacity: 1, transform: 'translateY(0)' },
+        },
       }}
     >
       <Box
         sx={{
           bgcolor: 'rgba(28, 28, 42, 0.6)',
-          backdropFilter: 'blur(12px)',
-          borderRadius: 1,
+          backdropFilter: 'blur(16px)',
+          borderRadius: 3,
           border: '1px solid rgba(255,255,255,0.08)',
           p: { xs: 3, md: 4 },
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          '&:hover': {
+            bgcolor: 'rgba(28, 28, 42, 0.75)',
+            border: '1px solid rgba(203,184,255,0.15)',
+            boxShadow: '0 8px 32px rgba(203,184,255,0.1)',
+          },
         }}
       >
         {/* Header */}
@@ -105,13 +115,14 @@ export default function PCSpecs() {
                   gap: 1.5,
                   p: 2,
                   bgcolor: 'rgba(255,255,255,0.03)',
-                  borderRadius: 1,
+                  borderRadius: 2,
                   border: '1px solid rgba(255,255,255,0.06)',
-                  transition: 'all 0.3s ease',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                   '&:hover': {
-                    bgcolor: 'rgba(255,255,255,0.05)',
-                    border: `1px solid ${spec.color}40`,
-                    transform: 'translateY(-2px)',
+                    bgcolor: 'rgba(255,255,255,0.06)',
+                    border: `1px solid ${spec.color}60`,
+                    transform: 'translateY(-3px)',
+                    boxShadow: `0 8px 24px rgba(0,0,0,0.3), 0 0 0 1px ${spec.color}30`,
                   },
                 }}
               >
@@ -122,10 +133,16 @@ export default function PCSpecs() {
                     justifyContent: 'center',
                     width: 36,
                     height: 36,
-                    borderRadius: 1,
+                    borderRadius: 1.5,
                     bgcolor: `${spec.color}20`,
                     color: spec.color,
                     flexShrink: 0,
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    '.MuiBox-root:hover > &': {
+                      transform: 'rotate(-5deg) scale(1.1)',
+                      bgcolor: `${spec.color}35`,
+                      boxShadow: `0 0 16px ${spec.color}40`,
+                    },
                   }}
                 >
                   {spec.icon}
