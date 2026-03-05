@@ -37,9 +37,9 @@ export default function HeroSection() {
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
-        px: 2,
-        mb: 5,
-        animation: 'fadeInScale 0.8s cubic-bezier(0.4, 0, 0.2, 1) both',
+        px: { xs: 2, sm: 3 },
+        mb: { xs: 4, sm: 5 },
+        animation: 'fadeInScale 0.6s cubic-bezier(0.4, 0, 0.2, 1) both',
         '@keyframes fadeInScale': {
           from: { opacity: 0, transform: 'scale(0.95) translateY(20px)' },
           to: { opacity: 1, transform: 'scale(1) translateY(0)' },
@@ -51,26 +51,21 @@ export default function HeroSection() {
         sx={{
           position: 'relative',
           mb: 3,
-          animation: 'float 6s ease-in-out infinite',
-          '@keyframes float': {
-            '0%, 100%': { transform: 'translateY(0px)' },
-            '50%': { transform: 'translateY(-8px)' },
-          },
           '&::before': {
             content: '""',
             position: 'absolute',
-            inset: -4,
+            inset: -3,
             borderRadius: '50%',
-            background: 'linear-gradient(135deg, #cbb8ff, #efb8c8, #86d5e4)',
+            background: 'linear-gradient(135deg, #d0bcff, #efb8c8, #ccc2dc)',
             animation: 'spin 8s linear infinite',
             zIndex: 0,
           },
           '&::after': {
             content: '""',
             position: 'absolute',
-            inset: -2,
+            inset: -1,
             borderRadius: '50%',
-            background: '#0f0f17',
+            background: '#1c1b1f',
             zIndex: 1,
           },
           '@keyframes spin': {
@@ -82,30 +77,21 @@ export default function HeroSection() {
         {loading ? (
           <Skeleton
             variant="circular"
-            width={112}
-            height={112}
-            sx={{ bgcolor: '#2e2e40', zIndex: 2, position: 'relative' }}
+            width={120}
+            height={120}
+            sx={{ bgcolor: '#36343b', zIndex: 2, position: 'relative' }}
           />
         ) : (
           <Avatar
             src={userData?.avatar_url || `https://avatars.githubusercontent.com/${GITHUB_USER}`}
             alt={`${GITHUB_USER} avatar`}
             sx={{
-              width: 112,
-              height: 112,
+              width: 120,
+              height: 120,
               zIndex: 2,
               position: 'relative',
-              border: '3px solid #1c1c2a',
-              boxShadow: '0 8px 32px rgba(203, 184, 255, 0.35)',
-              animation: 'glow 3s ease-in-out infinite',
-              '@keyframes glow': {
-                '0%, 100%': {
-                  boxShadow: '0 8px 32px rgba(203, 184, 255, 0.35)',
-                },
-                '50%': {
-                  boxShadow: '0 8px 40px rgba(203, 184, 255, 0.6), 0 0 60px rgba(239, 184, 200, 0.3)',
-                },
-              },
+              border: '2px solid #1c1b1f',
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(208, 188, 255, 0.25)',
             }}
           />
         )}
@@ -116,14 +102,12 @@ export default function HeroSection() {
         variant="displaySmall"
         component="h1"
         sx={{
-          fontWeight: 700,
-          background: 'linear-gradient(90deg, #cbb8ff 0%, #efb8c8 50%, #86d5e4 100%)',
+          fontWeight: 600,
+          background: 'linear-gradient(90deg, #d0bcff 0%, #efb8c8 50%, #ccc2dc 100%)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           backgroundClip: 'text',
-          letterSpacing: '-0.5px',
-          mb: 0.5,
-          fontFamily: '"Roboto Mono", "Roboto", monospace',
+          mb: 1,
         }}
       >
         m4rcel
@@ -131,15 +115,15 @@ export default function HeroSection() {
 
       <Typography
         variant="titleMedium"
-        sx={{ color: '#b0aac8', mb: 2, fontFamily: '"Roboto Mono", monospace', letterSpacing: '0.1em' }}
+        sx={{ color: '#cac4d0', mb: 3, fontFamily: '"Roboto Mono", monospace', letterSpacing: '0.05em' }}
       >
-        aka <span style={{ color: '#cbb8ff' }}>m5rcel</span>
+        aka <span style={{ color: '#d0bcff' }}>m5rcel</span>
       </Typography>
 
       {/* Tagline */}
       <Typography
         variant="bodyLarge"
-        sx={{ color: '#e6e0f0', mb: 3, maxWidth: 460, lineHeight: 1.6 }}
+        sx={{ color: '#e6e1e5', mb: 3, maxWidth: 480, lineHeight: 1.5 }}
       >
         developer&nbsp;·&nbsp;creative technologist&nbsp;·&nbsp;electronic producer
       </Typography>
@@ -148,22 +132,21 @@ export default function HeroSection() {
       <Chip
         icon={<CodeIcon sx={{ fontSize: 16 }} />}
         label="building stuff & making noise"
-        size="small"
+        size="medium"
         sx={{
           mb: 3,
-          bgcolor: 'rgba(203, 184, 255, 0.12)',
-          color: '#cbb8ff',
-          border: '1px solid rgba(203, 184, 255, 0.25)',
+          bgcolor: 'rgba(208, 188, 255, 0.12)',
+          color: '#d0bcff',
+          border: '1px solid rgba(208, 188, 255, 0.25)',
           fontFamily: '"Roboto Mono", monospace',
           fontSize: '0.75rem',
-          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          minHeight: 32,
+          transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
           cursor: 'default',
-          '& .MuiChip-icon': { color: '#cbb8ff' },
+          '& .MuiChip-icon': { color: '#d0bcff' },
           '&:hover': {
-            bgcolor: 'rgba(203, 184, 255, 0.18)',
-            border: '1px solid rgba(203, 184, 255, 0.4)',
-            transform: 'scale(1.05)',
-            boxShadow: '0 4px 16px rgba(203, 184, 255, 0.25)',
+            bgcolor: 'rgba(208, 188, 255, 0.16)',
+            border: '1px solid rgba(208, 188, 255, 0.35)',
           },
         }}
       />
@@ -204,25 +187,25 @@ export default function HeroSection() {
               gap: 0.75,
               px: 2,
               py: 1,
-              borderRadius: 3,
-              bgcolor: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.08)',
-              backdropFilter: 'blur(8px)',
-              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              minHeight: 40,            // M3 touch target
+              borderRadius: 2,
+              bgcolor: '#2b2930',       // M3 surface container high
+              border: '1px solid #49454f',
+              transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
               cursor: 'default',
               '&:hover': {
-                bgcolor: 'rgba(255,255,255,0.07)',
-                border: '1px solid rgba(134, 213, 228, 0.3)',
-                transform: 'translateY(-2px) scale(1.02)',
-                boxShadow: '0 8px 24px rgba(134, 213, 228, 0.15)',
+                bgcolor: '#36343b',
+                border: '1px solid #938f99',
+                // M3 elevation level 1
+                boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)',
               },
             }}
           >
-            <Box sx={{ color: '#86d5e4', display: 'flex', alignItems: 'center' }}>{icon}</Box>
-            <Typography variant="labelMedium" sx={{ color: '#e6e0f0', fontWeight: 600 }}>
+            <Box sx={{ color: '#ccc2dc', display: 'flex', alignItems: 'center' }}>{icon}</Box>
+            <Typography variant="labelLarge" sx={{ color: '#e6e1e5', fontWeight: 600 }}>
               {value}
             </Typography>
-            <Typography variant="labelSmall" sx={{ color: '#b0aac8' }}>
+            <Typography variant="labelSmall" sx={{ color: '#cac4d0' }}>
               {label}
             </Typography>
           </Box>

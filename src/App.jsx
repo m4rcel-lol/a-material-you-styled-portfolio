@@ -13,74 +13,165 @@ const theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#cbb8ff',        // M3 primary (purple tonal)
-      contrastText: '#1a0d4a',
+      main: '#d0bcff',        // M3 primary (purple) - adjusted for better contrast
+      contrastText: '#381e72',
     },
     secondary: {
-      main: '#efb8c8',        // M3 secondary
+      main: '#ccc2dc',        // M3 secondary
+      contrastText: '#332d41',
     },
     tertiary: {
-      main: '#86d5e4',        // M3 tertiary (cyan)
+      main: '#efb8c8',        // M3 tertiary (pink)
+      contrastText: '#492532',
     },
     background: {
-      default: '#0f0f17',
-      paper: '#1c1c2a',
+      default: '#1c1b1f',     // M3 dark background
+      paper: '#1c1b1f',
     },
     surface: {
-      main: '#1c1c2a',
-      container: '#252535',
-      containerHigh: '#2e2e40',
+      main: '#1c1b1f',
+      variant: '#49454f',
+      container: '#211f26',
+      containerLow: '#1c1b1f',
+      containerHigh: '#2b2930',
+      containerHighest: '#36343b',
     },
     text: {
-      primary: '#e6e0f0',
-      secondary: '#b0aac8',
+      primary: '#e6e1e5',
+      secondary: '#cac4d0',
     },
     outline: {
-      main: '#4a4a6a',
+      main: '#938f99',
+      variant: '#49454f',
     },
     error: {
-      main: '#ffb4ab',
+      main: '#f2b8b5',
+      contrastText: '#601410',
     },
   },
   typography: {
-    fontFamily: '"Roboto", sans-serif',
-    displayLarge: { fontSize: '3.5rem', fontWeight: 400, letterSpacing: '-0.25px', lineHeight: 1.12 },
-    displayMedium: { fontSize: '2.8rem', fontWeight: 400, letterSpacing: 0, lineHeight: 1.16 },
-    displaySmall: { fontSize: '2.25rem', fontWeight: 400, letterSpacing: 0, lineHeight: 1.2 },
-    headlineLarge: { fontSize: '2rem', fontWeight: 400, letterSpacing: 0, lineHeight: 1.25 },
-    headlineMedium: { fontSize: '1.75rem', fontWeight: 400, letterSpacing: 0, lineHeight: 1.29 },
-    headlineSmall: { fontSize: '1.5rem', fontWeight: 400, letterSpacing: 0, lineHeight: 1.33 },
-    titleLarge: { fontSize: '1.375rem', fontWeight: 500, letterSpacing: 0, lineHeight: 1.27 },
-    titleMedium: { fontSize: '1rem', fontWeight: 500, letterSpacing: '0.15px', lineHeight: 1.5 },
-    titleSmall: { fontSize: '0.875rem', fontWeight: 500, letterSpacing: '0.1px', lineHeight: 1.43 },
-    bodyLarge: { fontSize: '1rem', fontWeight: 400, letterSpacing: '0.5px', lineHeight: 1.5 },
-    bodyMedium: { fontSize: '0.875rem', fontWeight: 400, letterSpacing: '0.25px', lineHeight: 1.43 },
-    bodySmall: { fontSize: '0.75rem', fontWeight: 400, letterSpacing: '0.4px', lineHeight: 1.33 },
-    labelLarge: { fontSize: '0.875rem', fontWeight: 500, letterSpacing: '0.1px', lineHeight: 1.43 },
-    labelMedium: { fontSize: '0.75rem', fontWeight: 500, letterSpacing: '0.5px', lineHeight: 1.33 },
-    labelSmall: { fontSize: '0.6875rem', fontWeight: 500, letterSpacing: '0.5px', lineHeight: 1.45 },
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    // Display styles
+    displayLarge: {
+      fontSize: '57px',
+      fontWeight: 400,
+      letterSpacing: '-0.25px',
+      lineHeight: '64px'
+    },
+    displayMedium: {
+      fontSize: '45px',
+      fontWeight: 400,
+      letterSpacing: 0,
+      lineHeight: '52px'
+    },
+    displaySmall: {
+      fontSize: '36px',
+      fontWeight: 400,
+      letterSpacing: 0,
+      lineHeight: '44px'
+    },
+    // Headline styles
+    headlineLarge: {
+      fontSize: '32px',
+      fontWeight: 400,
+      letterSpacing: 0,
+      lineHeight: '40px'
+    },
+    headlineMedium: {
+      fontSize: '28px',
+      fontWeight: 400,
+      letterSpacing: 0,
+      lineHeight: '36px'
+    },
+    headlineSmall: {
+      fontSize: '24px',
+      fontWeight: 400,
+      letterSpacing: 0,
+      lineHeight: '32px'
+    },
+    // Title styles
+    titleLarge: {
+      fontSize: '22px',
+      fontWeight: 400,
+      letterSpacing: 0,
+      lineHeight: '28px'
+    },
+    titleMedium: {
+      fontSize: '16px',
+      fontWeight: 500,
+      letterSpacing: '0.15px',
+      lineHeight: '24px'
+    },
+    titleSmall: {
+      fontSize: '14px',
+      fontWeight: 500,
+      letterSpacing: '0.1px',
+      lineHeight: '20px'
+    },
+    // Body styles
+    bodyLarge: {
+      fontSize: '16px',
+      fontWeight: 400,
+      letterSpacing: '0.5px',
+      lineHeight: '24px'
+    },
+    bodyMedium: {
+      fontSize: '14px',
+      fontWeight: 400,
+      letterSpacing: '0.25px',
+      lineHeight: '20px'
+    },
+    bodySmall: {
+      fontSize: '12px',
+      fontWeight: 400,
+      letterSpacing: '0.4px',
+      lineHeight: '16px'
+    },
+    // Label styles
+    labelLarge: {
+      fontSize: '14px',
+      fontWeight: 500,
+      letterSpacing: '0.1px',
+      lineHeight: '20px'
+    },
+    labelMedium: {
+      fontSize: '12px',
+      fontWeight: 500,
+      letterSpacing: '0.5px',
+      lineHeight: '16px'
+    },
+    labelSmall: {
+      fontSize: '11px',
+      fontWeight: 500,
+      letterSpacing: '0.5px',
+      lineHeight: '16px'
+    },
   },
   shape: {
-    borderRadius: 24,
+    borderRadius: 12,         // M3 default is 12dp for medium components
   },
+  spacing: 8,                 // M3 uses 8dp grid system
   components: {
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          background: '#0f0f17',
+          background: '#1c1b1f',
           scrollbarWidth: 'thin',
-          scrollbarColor: '#4a4a6a #1a1a2e',
+          scrollbarColor: '#938f99 #1c1b1f',
         },
       },
     },
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: 24,
+          borderRadius: 12,
           backgroundImage: 'none',
-          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          // M3 elevation level 1
+          boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)',
+          transition: 'box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1)',
           '&:hover': {
-            transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+            // M3 elevation level 2
+            boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15)',
           },
         },
       },
@@ -88,13 +179,21 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 20,
+          borderRadius: 20,       // Full corner (large) for buttons
           textTransform: 'none',
           fontWeight: 500,
-          transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+          minHeight: 40,          // M3 touch target
+          paddingLeft: 24,
+          paddingRight: 24,
+          transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
+        },
+        contained: {
+          boxShadow: 'none',
           '&:hover': {
-            transform: 'translateY(-1px)',
-            boxShadow: '0 4px 12px rgba(203, 184, 255, 0.3)',
+            boxShadow: '0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)',
+          },
+          '&:active': {
+            boxShadow: 'none',
           },
         },
       },
@@ -103,10 +202,11 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 8,
-          height: 28,
-          transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+          height: 32,             // M3 default chip height
+          transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
           '&:hover': {
-            transform: 'scale(1.05)',
+            // State layer effect
+            backgroundColor: 'rgba(208, 188, 255, 0.08)',
           },
         },
       },
@@ -114,7 +214,8 @@ const theme = createTheme({
     MuiCardActionArea: {
       styleOverrides: {
         root: {
-          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          borderRadius: 12,
+          transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
         },
       },
     },
@@ -129,14 +230,8 @@ export default function App() {
       <Box
         sx={{
           minHeight: '100vh',
-          background: 'linear-gradient(135deg, #0f0f17 0%, #1a1530 25%, #0f0f17 50%, #121a2a 75%, #0f0f17 100%)',
-          backgroundSize: '400% 400%',
-          animation: 'gradientShift 15s ease infinite',
-          py: { xs: 4, md: 6 },
-          '@keyframes gradientShift': {
-            '0%, 100%': { backgroundPosition: '0% 50%' },
-            '50%': { backgroundPosition: '100% 50%' },
-          },
+          background: '#1c1b1f',  // M3 dark background
+          py: { xs: 3, sm: 4, md: 6 },
         }}
       >
         <HeroSection />
