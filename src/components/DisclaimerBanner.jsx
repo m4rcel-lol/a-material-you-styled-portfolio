@@ -31,11 +31,24 @@ export default function DisclaimerBanner() {
           px: { xs: 2, sm: 4 },
           py: 1.25,
           boxSizing: 'border-box',
+          animation: 'slideInDown 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+          '@keyframes slideInDown': {
+            from: { opacity: 0, transform: 'translateY(-20px)' },
+            to: { opacity: 1, transform: 'translateY(0)' },
+          },
         }}
       >
         <InfoOutlinedIcon
           fontSize="small"
-          sx={{ color: '#cbb8ff', flexShrink: 0 }}
+          sx={{
+            color: '#cbb8ff',
+            flexShrink: 0,
+            animation: 'pulse 2s ease-in-out infinite',
+            '@keyframes pulse': {
+              '0%, 100%': { opacity: 1 },
+              '50%': { opacity: 0.6 },
+            },
+          }}
         />
         <Typography
           variant="labelSmall"
@@ -65,7 +78,12 @@ export default function DisclaimerBanner() {
           sx={{
             color: '#4a4a6a',
             flexShrink: 0,
-            '&:hover': { color: '#b0aac8', background: 'rgba(203,184,255,0.08)' },
+            transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+            '&:hover': {
+              color: '#b0aac8',
+              background: 'rgba(203,184,255,0.12)',
+              transform: 'rotate(90deg)',
+            },
           }}
         >
           <CloseIcon fontSize="small" />

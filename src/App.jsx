@@ -129,8 +129,14 @@ export default function App() {
       <Box
         sx={{
           minHeight: '100vh',
-          background: 'linear-gradient(135deg, #0f0f17 0%, #12122a 50%, #0a1525 100%)',
+          background: 'linear-gradient(135deg, #0f0f17 0%, #1a1530 25%, #0f0f17 50%, #121a2a 75%, #0f0f17 100%)',
+          backgroundSize: '400% 400%',
+          animation: 'gradientShift 15s ease infinite',
           py: { xs: 4, md: 6 },
+          '@keyframes gradientShift': {
+            '0%, 100%': { backgroundPosition: '0% 50%' },
+            '50%': { backgroundPosition: '100% 50%' },
+          },
         }}
       >
         <HeroSection />
