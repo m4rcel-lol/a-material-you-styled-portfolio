@@ -1,6 +1,6 @@
 import { Box } from '@mui/material'
 
-const AD_IMAGE_URL = 'https://static.wikia.nocookie.net/roblox/images/8/8e/AdBannerTemplate.png/revision/latest/scale-to-width-down/728?cb=20190402130020'
+const AD_IMAGE_URL = 'https://github.com/user-attachments/assets/ca83b670-5fae-4349-8324-3f26d4ecc3fc'
 
 export default function AdBanner() {
   return (
@@ -32,7 +32,7 @@ export default function AdBanner() {
           width: '728px',
           height: '90px',
           maxWidth: '100%',
-          borderRadius: 2,
+          borderRadius: 0,
           overflow: 'hidden',
           border: '1px solid rgba(255,255,255,0.08)',
           bgcolor: 'rgba(28, 28, 42, 0.6)',
